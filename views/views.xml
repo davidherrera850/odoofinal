@@ -1,0 +1,570 @@
+<odoo>
+  <data>
+    <!-- Vistas de persona-->
+
+    <record model="ir.ui.view" id="odoo58.odoo58_list_view">
+      <field name="name">odoo58.odoo58.view.tree</field>
+      <field name="model">odoo58.odoo58</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="pais"/>
+          <field name="torneos_ids"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo58.odoo58_search_view">
+      <field name="name">odoo58.odoo58.view.search</field>
+      <field name="model">odoo58.odoo58</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="pais"/>
+          <field name="torneos_ids"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo58.odoo58_form_view">
+      <field name="name">odoo58.odoo58.view.form</field>
+      <field name="model">odoo58.odoo58</field>
+      <field name="arch" type="xml">
+        <form string="Información de jugador">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                DNI <field name="name" placeholder="dni"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="nombre"/>
+                <field name="pais"/>
+                <field name="torneos_ids"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo58.odoo58_action_window">
+      <field name="name">Participantes</field>
+      <field name="res_model">odoo58.odoo58</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="odoo58" id="odoo58.menu_root"/>
+    <menuitem name="Participantes" id="odoo58.menu_persona" parent="odoo58.menu_root"/>
+    <menuitem name="List" id="odoo58.menu_persona_list" parent="odoo58.menu_persona"
+              action="odoo58.odoo58_action_window"/>
+    <!-- 2-->
+
+    <record model="ir.ui.view" id="odoo58.torneo_list_view">
+      <field name="name">odoo58.torneo.view.tree</field>
+      <field name="model">odoo58.torneo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombretorneo"/>
+          <field name="nparticipantes"/>
+          <field name="jugadores_ids"/>
+          <field name="arbitros_ids"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo58.torneo_search_view">
+      <field name="name">odoo58.torneo.view.search</field>
+      <field name="model">odoo58.torneo</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombretorneo"/>
+          <field name="nparticipantes"/>
+          <field name="jugadores_ids"/>
+          <field name="arbitros_ids"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo58.torneo_form_view">
+      <field name="name">odoo58.torneo.view.form</field>
+      <field name="model">odoo58.torneo</field>
+      <field name="arch" type="xml">
+        <form string="Información de torneo">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                codtorneo <field name="name" placeholder="codtorneo"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombretorneo" placeholder="nombretorneo"/>
+                <field name="nparticipantes"/>
+                <field name="jugadores_ids"/>
+                <field name="arbitros_ids"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo58.torneo_action_window">
+      <field name="name">Torneo</field>
+      <field name="res_model">odoo58.torneo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="odoo58" id="odoo58.menu_root"/>
+    <menuitem name="Torneo" id="odoo58.menu_torneo" parent="odoo58.menu_root"/>
+    <menuitem name="List" id="odoo58.menu_torneo_list" parent="odoo58.menu_torneo"
+              action="odoo58.torneo_action_window"/>
+    <!-- 3-->
+
+    <record model="ir.ui.view" id="odoo58.arbitro_list_view">
+      <field name="name">odoo58.arbitro.view.tree</field>
+      <field name="model">odoo58.arbitro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombrearbitro"/>
+          <field name="origen"/>
+          <field name="torneos1_ids"/>
+          <field name="partidas_ids"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo58.arbitro_search_view">
+      <field name="name">odoo58.arbitro.view.search</field>
+      <field name="model">odoo58.arbitro</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombrearbitro"/>
+          <field name="origen"/>
+          <field name="torneos1_ids"/>
+          <field name="partidas_ids"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo58.arbitro_form_view">
+      <field name="name">odoo58.arbitro.view.form</field>
+      <field name="model">odoo58.arbitro</field>
+      <field name="arch" type="xml">
+        <form string="Información de arbitro">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                codarbitro <field name="name" placeholder="codarbitro"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombrearbitro" placeholder="nombrearbitro"/>
+                <field name="origen"/>
+                <field name="torneos1_ids"/>
+                <field name="partidas_ids"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo58.arbitro_action_window">
+      <field name="name">arbitro</field>
+      <field name="res_model">odoo58.arbitro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="odoo58" id="odoo58.menu_root"/>
+    <menuitem name="arbitro" id="odoo58.menu_arbitro" parent="odoo58.menu_root"/>
+    <menuitem name="List" id="odoo58.menu_arbitro_list" parent="odoo58.menu_arbitro"
+              action="odoo58.arbitro_action_window"/>
+
+    <!-- 4-->
+
+    <record model="ir.ui.view" id="odoo58.partida_list_view">
+      <field name="name">odoo58.partida.view.tree</field>
+      <field name="model">odoo58.partida</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="ronda"/>
+          <field name="njugadas"/>
+          <field name="arbitro_id"/>
+          <field name="movimiento_ids"/>
+          <field name="salas_ids"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo58.partida_search_view">
+      <field name="name">odoo58.partida.view.search</field>
+      <field name="model">odoo58.partida</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="ronda"/>
+          <field name="njugadas"/>
+          <field name="arbitro_id"/>
+          <field name="movimiento_ids"/>
+          <field name="salas_ids"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo58.partida_form_view">
+      <field name="name">odoo58.partida.view.form</field>
+      <field name="model">odoo58.partida</field>
+      <field name="arch" type="xml">
+        <form string="Información de partida">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                codpartida <field name="name" placeholder="codpartida"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="ronda" placeholder="ronda"/>
+                <field name="njugadas"/>
+                <field name="arbitro_id"/>
+                <field name="movimiento_ids"/>
+                <field name="salas_ids"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo58.partida_action_window">
+      <field name="name">Partida</field>
+      <field name="res_model">odoo58.partida</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="odoo58" id="odoo58.menu_root"/>
+    <menuitem name="Partida" id="odoo58.menu_partida" parent="odoo58.menu_root"/>
+    <menuitem name="List" id="odoo58.menu_partida_list" parent="odoo58.menu_partida"
+              action="odoo58.partida_action_window"/>
+
+    <!-- 5-->
+
+    <record model="ir.ui.view" id="odoo58.sala_list_view">
+      <field name="name">odoo58.sala.view.tree</field>
+      <field name="model">odoo58.sala</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombresala"/>
+          <field name="mesa"/>
+          <field name="partida2_id"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo58.sala_search_view">
+      <field name="name">odoo58.sala.view.search</field>
+      <field name="model">odoo58.sala</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombresala"/>
+          <field name="mesa"/>
+          <field name="partida2_id"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo58.sala_form_view">
+      <field name="name">odoo58.sala.view.form</field>
+      <field name="model">odoo58.sala</field>
+      <field name="arch" type="xml">
+        <form string="Información de sala">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                codsala <field name="name" placeholder="codsala"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombresala" placeholder="nombresala"/>
+                <field name="mesa"/>
+                <field name="partida2_id"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo58.sala_action_window">
+      <field name="name">Sala</field>
+      <field name="res_model">odoo58.sala</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="odoo58" id="odoo58.menu_root"/>
+    <menuitem name="Sala" id="odoo58.menu_sala" parent="odoo58.menu_root"/>
+    <menuitem name="List" id="odoo58.menu_sala_list" parent="odoo58.menu_sala"
+              action="odoo58.sala_action_window"/>
+
+    <!-- 6-->
+
+    <record model="ir.ui.view" id="odoo58.movimiento_list_view">
+      <field name="name">odoo58.movimiento.view.tree</field>
+      <field name="model">odoo58.movimiento</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="piezamovida"/>
+          <field name="captura"/>
+          <field name="partida1_id"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="odoo58.movimiento_search_view">
+      <field name="name">odoo58.movimiento.view.search</field>
+      <field name="model">odoo58.movimiento</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="piezamovida"/>
+          <field name="captura"/>
+          <field name="partida1_id"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo58.movimiento_form_view">
+      <field name="name">odoo58.movimiento.view.form</field>
+      <field name="model">odoo58.movimiento</field>
+      <field name="arch" type="xml">
+        <form string="Información de movimiento">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                codmovimiento <field name="name" placeholder="codmovimiento"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="piezamovida" placeholder="piezamovida"/>
+                <field name="captura"/>
+                <field name="partida1_id"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+
+
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo58.movimiento_action_window">
+      <field name="name">Movimiento</field>
+      <field name="res_model">odoo58.movimiento</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="odoo58" id="odoo58.menu_root"/>
+    <menuitem name="Movimiento" id="odoo58.menu_movimiento" parent="odoo58.menu_root"/>
+    <menuitem name="List" id="odoo58.menu_movimiento_list" parent="odoo58.menu_movimiento"
+              action="odoo58.movimiento_action_window"/>
+
+
+
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="odoo58.list">
+      <field name="name">odoo58 list</field>
+      <field name="model">odoo58.odoo58</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="odoo58.action_window">
+      <field name="name">odoo58 window</field>
+      <field name="res_model">odoo58.odoo58</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="odoo58.action_server">
+      <field name="name">odoo58 server</field>
+      <field name="model_id" ref="model_odoo58_odoo58"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="odoo58" id="odoo58.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="odoo58.menu_1" parent="odoo58.menu_root"/>
+    <menuitem name="Menu 2" id="odoo58.menu_2" parent="odoo58.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="odoo58.menu_1_list" parent="odoo58.menu_1"
+              action="odoo58.action_window"/>
+    <menuitem name="Server to list" id="odoo58" parent="odoo58.menu_2"
+              action="odoo58.action_server"/>
+-->
+  </data>
+</odoo>

@@ -1,0 +1,29 @@
+<odoo>
+    <record id="odoo58.odoo58_report" model="ir.actions.report">
+        <field name="name"> Informe de liga</field>
+        <field name="model">odoo58.liga</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo58.liga_report_view</field>
+        <field name="report_file">odoo58.liga_report</field>
+        <field name="binding_model_id" ref="model_odoo58_liga"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="odoo58_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Liga </h1><br />
+                <t t-foreach="docs" t-as="liga">
+                    <ul>
+                        <li>    idzapateria <span t-field="liga.name" /></li>
+                        <li>    nombre <span t-field="liga.nombreliga" /></li>
+                        <li>    equipo <span t-field="liga.nacionalidad" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

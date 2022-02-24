@@ -1,0 +1,30 @@
+<odoo>
+    <record id="odoo58.odoo58_report" model="ir.actions.report">
+        <field name="name"> Informe de fubolistas</field>
+        <field name="model">odoo58.odoo58</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo58.odoo58_report_view</field>
+        <field name="report_file">odoo58.odoo58_report</field>
+        <field name="binding_model_id" ref="model_odoo58_odoo58"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="odoo58_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Fubolista </h1><br />
+                <t t-foreach="docs" t-as="odoo58">
+                    <ul>
+                        <li>    dni <span t-field="odoo58.name" /></li>
+                        <li>    nombre <span t-field="odoo58.nombre" /></li>
+                        <li>    equipo <span t-field="odoo58.equipo" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+<!--
+         <record id="object0" model="odoo58.odoo58">
+            <field name="name">24500678D</field>
+            <field name="nombre">Antonio</field>
+            <field name="equipo">Leonesfc</field>
+
+          </record>
+        <record id="object1" model="odoo58.zapateria">
+            <field name="name">245</field>
+            <field name="marca">Adidas</field>
+            <field name="modelo">nemeziz rojo</field>
+
+          </record>
+        <record id="object3" model="odoo58.liga">
+            <field name="name">2450</field>
+            <field name="nombreliga">LigaSantander</field>
+            <field name="nacionalidad">ESP</field>
+
+          </record>
+        <record id="object4" model="odoo58.odoo58">
+            <field name="name">2450067</field>
+            <field name="nombre">Pablo</field>
+            <field name="equipo">Sabiote</field>
+
+          </record>
+        <record id="object5" model="odoo58.zapateria">
+            <field name="name">2455</field>
+            <field name="marca">Nike</field>
+            <field name="modelo">futbol sala azules</field>
+
+          </record>
+        <record id="object6" model="odoo58.liga">
+            <field name="name">24505</field>
+            <field name="nombreliga">Premier</field>
+            <field name="nacionalidad">ENG</field>
+
+          </record>
+
+        <record id="object7" model="odoo58.odoo58">
+            <field name="name">24500</field>
+            <field name="nombre">David</field>
+            <field name="equipo">loscabezasfc</field>
+
+          </record>
+        <record id="object8" model="odoo58.zapateria">
+            <field name="name">24578</field>
+            <field name="marca">Joma</field>
+            <field name="modelo">Acustical</field>
+
+          </record>
+        <record id="object9" model="odoo58.liga">
+            <field name="name">245067</field>
+            <field name="nombreliga">Bundesliga</field>
+            <field name="nacionalidad">GER</field>
+
+          </record>
+
+        <record id="object10" model="odoo58.odoo58">
+            <field name="name">24500J</field>
+            <field name="nombre">Luis</field>
+            <field name="equipo">serpientesfc</field>
+
+          </record>
+        <record id="object11" model="odoo58.zapateria">
+            <field name="name">245123</field>
+            <field name="marca">Adidas</field>
+            <field name="modelo">nemeziz rosas</field>
+
+          </record>
+        <record id="object12" model="odoo58.liga">
+            <field name="name">24501246</field>
+            <field name="nombreliga">Calcio</field>
+            <field name="nacionalidad">ITA</field>
+
+          </record>
+-->
+<!--
+          <record id="object0" model="odoo58.odoo58">
+            <field name="name">Object 0</field>
+            <field name="value">0</field>
+          </record>
+
+          <record id="object1" model="odoo58.odoo58">
+            <field name="name">Object 1</field>
+            <field name="value">10</field>
+          </record>
+
+          <record id="object2" model="odoo58.odoo58">
+            <field name="name">Object 2</field>
+            <field name="value">20</field>
+          </record>
+
+          <record id="object3" model="odoo58.odoo58">
+            <field name="name">Object 3</field>
+            <field name="value">30</field>
+          </record>
+
+          <record id="object4" model="odoo58.odoo58">
+            <field name="name">Object 4</field>
+            <field name="value">40</field>
+          </record>
+-->
+    </data>
+</odoo>
